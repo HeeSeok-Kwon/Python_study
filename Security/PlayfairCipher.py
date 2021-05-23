@@ -31,23 +31,24 @@ def PlayfairCipher(key, text, x):
     table = createTable(key)
     size = len(text)
     text = text.upper()
+    text = text.replace('J', 'I') # I/J는 같은 문자로 취급
     copy = text[0] 
     result = ""
     x1, y1, x2, y2 = 0, 0, 0, 0
-    for i in range(1, size): # 같은 문자열 사이 x 삽입
-        if text[i-1] == text[i]:
-            copy += 'x'
-        if text[i] == '':
+    for i in range(1, size): 
+        if text[i-1] == text[i]: # 같은 문자열 사이 x 삽입
+            copy += 'X'
+        if text[i] == '': # 빈 칸 제거
             continue
         copy += text[i]
     if len(copy)%2 != 0: # 문자열 길이 짝수로 만들기
-        copy += 'x'
+        copy += 'X'
     for j in range(0, len(copy), 2):
         for x in range(5):
             for y in range(5):
-                if copy[j] == table[x][y]:
+                if copy[j] in table[x][y]:
                     x1, y1 = x, y
-                if copy[j+1] == table[x][y]:
+                if copy[j+1] in table[x][y]:
                     x2, y2 = x, y
         if x1 == x2:
             y1 += 1
@@ -68,5 +69,3 @@ def PlayfairCipher(key, text, x):
         
 
 print(PlayfairCipher(input(), input(), 1))
-
-
