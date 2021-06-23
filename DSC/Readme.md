@@ -4,7 +4,7 @@
 - 오류 : "Sorry something went wrong. Reload?"
 - 예시
 >> 주피터 노트북 랜더링 사이트 : https://nbviewer.jupyter.org
->> 깃허브 주소 : https://github.com/HeeSeok-Kwon/Python_study/blob/main/DSC/DSC_20210428_assignment.ipynb
+>> </br>깃허브 주소 : https://github.com/HeeSeok-Kwon/Python_study/blob/main/DSC/DSC_20210428_assignment.ipynb
 >> https://nbviewer.jupyter.org/github/HeeSeok-Kwon/Python_study/blob/main/DSC/DSC_20210428_assignment.ipynb
 >> 이렇게 하면 정상 작동
 
