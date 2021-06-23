@@ -4,9 +4,9 @@
 - 오류 : "Sorry something went wrong. Reload?"
 - 해결방안 예시
 >> 1. 주피터 노트북 랜더링 사이트 : https://nbviewer.jupyter.org
->> 2. </br>깃허브 주소 : https://github.com/HeeSeok-Kwon/Python_study/blob/main/DSC/DSC_20210428_assignment.ipynb
->> 3. </br> 수정된 주소 : https://nbviewer.jupyter.org/github/HeeSeok-Kwon/Python_study/blob/main/DSC/DSC_20210428_assignment.ipynb
->> 4. </br>주소창에 수정된 주소 url을 입력하면 정상작동
+>> 2. 깃허브 주소 : https://github.com/HeeSeok-Kwon/Python_study/blob/main/DSC/DSC_20210428_assignment.ipynb
+>> 3. 수정된 주소 : https://nbviewer.jupyter.org/github/HeeSeok-Kwon/Python_study/blob/main/DSC/DSC_20210428_assignment.ipynb
+>> 4. 주소창에 수정된 주소 url을 입력하면 정상작동
 
 ### 협업도구
 - colab
