@@ -8,5 +8,5 @@ except ValueError as excpetion:
   print("정수를 입력해주세요!")
   print(type(excpetion), excpetion)
 except IndexError as excpetion:
-   print("리스트의 인덱스를 벗어났어요!")
+  print("리스트의 인덱스를 벗어났어요!")
   print(type(excpetion), excpetion)
