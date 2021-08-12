@@ -4,7 +4,7 @@
 - CodingTest : "이것이 취업을 위한 코딩테스트다" 실습
 - DSC : Developer Student Clubs 스터디
 - Data_Mining_For_Business_Analytics
-- Learn_Python_By_Yourself : 혼자 공부하는 파이썬
+- Learn_Python_By_Yourself : "혼자 공부하는 파이썬" 실습
 - SIG : 부산대학교 python 기초 동아리
 - Self : python 코드 연습 프로젝트
 - basicAI : "수학과 함께하는 AI 기초" 실습 
