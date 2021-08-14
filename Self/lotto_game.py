@@ -3,7 +3,7 @@
 from random import sample
 
 def lotto_extract() :
-    lotto_numbers = sorted(sample(range(1, 10), k=6))
+    lotto_numbers = sorted(sample(range(1, 46), k=6))
     for j in range(0, 2):
         cnt = 0
         for r in range(j,j+4):
