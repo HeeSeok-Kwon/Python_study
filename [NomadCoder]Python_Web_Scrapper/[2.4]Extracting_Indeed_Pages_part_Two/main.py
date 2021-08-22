@@ -21,3 +21,4 @@ for i in range(0, 1001, 50):
 
 # print(b_tag[-1])
 max_page = b_tag[-1] 
+
