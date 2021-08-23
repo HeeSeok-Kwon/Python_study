@@ -1,4 +1,3 @@
-import re
 import requests
 from bs4 import BeautifulSoup
 # https://www.whatismybrowser.com/detect/what-is-my-user-agent
