@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 SO_URL = f"https://stackoverflow.com/jobs?q=python&pg=1"
 
 def extract_so_pages():
-    result = requests.get(SO_URL, headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36"})
+    result = requests.get(SO_URL, headers={"User-Agent":""})
     soup = BeautifulSoup(result.text, "html.parser")
     # print(soup)
     pages = soup.find("div", {"class":"s-pagination"}).find_all("a")
