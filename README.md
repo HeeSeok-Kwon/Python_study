@@ -1,6 +1,7 @@
 # Python_study
 ### 상세
 - Basic_Mathematics_for_Data_Science : "데이터 과학을 위한 기초수학 with 파이썬" 실습
+- Blockchain_learning_with_Python : "파이썬으로 배우는 블록체인 구조와 이론" 실습
 - CodingTest : "이것이 취업을 위한 코딩테스트다" 실습
 - DSC : Developer Student Clubs 스터디
 - Data_Mining_For_Business_Analytics
