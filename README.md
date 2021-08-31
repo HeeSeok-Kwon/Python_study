@@ -10,7 +10,7 @@
 - Self : python 코드 연습 프로젝트
 - [NomadCoder]Python_Web_Scrapper : Python web scrapper 무료 강의 실습
 - basicAI : "수학과 함께하는 AI 기초" 실습 
-- Security : 보안 이론 스터디
+- Security : 보안 실습
 
 ### 사용도구
 - VScode
