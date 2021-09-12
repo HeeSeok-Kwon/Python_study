@@ -4,7 +4,7 @@ h.sort()
 start = h[0]
 end = h[n-1]
 res = 0
-# 연산 횟수가 많음
+# 순차 탐색 - 시간 초과
 while start < end:
   buf = 0
   for i in h:
