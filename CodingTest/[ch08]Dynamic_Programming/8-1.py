@@ -4,4 +4,4 @@ def fibo(x):
   return fibo(x-1) + fibo(x-2)
 
 x = int(input()) # 항의 번호 입력
-print(fibo(x))
+print(fibo(x)) # x가 커질수록 연산횟수가 기하급수적으로 늘어남
