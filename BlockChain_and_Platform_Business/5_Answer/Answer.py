@@ -11,21 +11,26 @@ class Blockchain(object):
     self.chain = []
     # 현재 트랜잭션
     self.current_transactions = []
+    # mine 변수 선언하여 None 할당 (proof_of_work 결과값 담을 변수) 
+    self.mine = None
     # 최초의 블록
     self.new_block(nonce=100, previous_hash=1) # gensis block
   
   # 블록 추가
   def new_block(self, nonce, previous_hash=None):
-    # 블록 구조
+    # 블록 구조 + current_hash 원소 추가
     block = {
       'index': len(self.chain) + 1,
       'timestamp': time(),
       'transactions': self.current_transactions,
       'nonce': nonce,
-      'previous_hash': previous_hash or self.hash(self.chain[-1])
+      'previous_hash': previous_hash or self.hash(self.chain[-1]),
+      'current_hash': self.mine
     }
     # 현재 트랜잭션 비우기
     self.current_transactions = []
+    # mine 변수 ""로 초기화
+    self.mine = ""
     # 체인에 블록 연결하기
     self.chain.append(block)
 
@@ -64,6 +69,8 @@ class Blockchain(object):
     guess_hash = hashlib.sha256(guess).hexdigest()
     # print() 할 때, 커서 맨 앞으로 위치시켜 출력하기
     print(guess_hash,end='\r')
+    # mine에 결과값 할당
+    self.mine = guess_hash
     # 조건 0이 4개로 변환하기
     return guess_hash[:4] == "0000"
 
