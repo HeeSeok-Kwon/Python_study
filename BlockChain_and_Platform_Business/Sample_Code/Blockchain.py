@@ -9,6 +9,7 @@ class Blockchain(object):
   def __init__(self):
     self.chain = []
     self.current_transactions = []
+    self.mine = None
     self.new_block(nonce=100, previous_hash=1) # gensis block
   
   # 블록 추가
@@ -18,10 +19,12 @@ class Blockchain(object):
       'timestamp': time(),
       'transactions': self.current_transactions,
       'nonce': nonce,
-      'previous_hash': previous_hash or self.hash(self.chain[-1])
+      'previous_hash': previous_hash or self.hash(self.chain[-1]),
+      'current_hash': self.mine
     }
 
     self.current_transactions = [] # 버퍼 비우기
+    self.mine = ""
     self.chain.append(block)
 
     return block
@@ -55,9 +58,10 @@ class Blockchain(object):
 
   def valid_proof(self, prev_block, nonce):
     # guess = str(prev_nonce*nonce).encode()
-    guess = str(prev_block+str(nonce)).encode()
+    guess = (str(prev_block)+str(nonce)).encode()
     guess_hash = hashlib.sha256(guess).hexdigest()
     print(guess_hash,end='\r')
+    self.mine = guess_hash
     return guess_hash[:4] == "0000"
 
 bc = Blockchain()
@@ -68,4 +72,3 @@ print(json.dumps(bc.chain, indent=2))
 # bc.proof_of_work(bc.last_block()['nonce'])
 bc.proof_of_work(bc.hash(bc.last_block()))
 print(json.dumps(bc.chain, indent=2))
-
