@@ -46,7 +46,7 @@ class Blockchain(object):
   def valid_proof(self, prev_block, nonce):
     # print() 할 때, 커서 맨 앞으로 위치시켜 출력하기
     # mine에 결과값 할당
-    # 조건 0이 4개로 변환하기
+    # 조건 0을 4개로 변환하기
     pass
 
 
@@ -62,6 +62,3 @@ bc.new_transactions('jenny','sujan', 100) # jenny가 sujan에게 100코인 전�
 # proof_of_work 호출
 
 # 현재 체인 상태를 출력하기
-
-
-  
