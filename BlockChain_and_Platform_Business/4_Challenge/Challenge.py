@@ -9,13 +9,15 @@ class Blockchain(object):
   def __init__(self):
     # 체인
     # 현재 트랜잭션
+    # mine 변수 선언하여 None 할당 (proof_of_work 결과값 담을 변수) 
     # 최초의 블록
     pass
   
   # 블록 추가
   def new_block(self, nonce, previous_hash=None):
-    # 블록 구조
+    # 블록 구조 + current_hash 원소 추가
     # 현재 트랜잭션 비우기
+    # mine 변수 ""로 초기화
     # 체인에 블록 연결하기
 
     return block
@@ -43,6 +45,7 @@ class Blockchain(object):
 
   def valid_proof(self, prev_block, nonce):
     # print() 할 때, 커서 맨 앞으로 위치시켜 출력하기
+    # mine에 결과값 할당
     # 조건 0이 4개로 변환하기
     pass
 
