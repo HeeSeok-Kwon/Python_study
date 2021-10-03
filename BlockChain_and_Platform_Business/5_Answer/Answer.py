@@ -71,7 +71,7 @@ class Blockchain(object):
     print(guess_hash,end='\r')
     # mine에 결과값 할당
     self.mine = guess_hash
-    # 조건 0이 4개로 변환하기
+    # 조건 0을 4개로 변환하기
     return guess_hash[:4] == "0000"
 
 bc = Blockchain() # 객체 생성 
