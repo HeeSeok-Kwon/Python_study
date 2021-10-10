@@ -60,6 +60,8 @@ class Blockchain(object):
     # valid_proof 호출
     while self.valid_proof(prev_block, nonce) is False:
       nonce += 1
+    # new_transactions 호출 -- 채굴 보상 50코인
+    self.new_transactions('system', 'me', 50)
     # new_block 호출
     self.new_block(nonce)
     print()
@@ -71,7 +73,7 @@ class Blockchain(object):
     print(guess_hash,end='\r')
     # mine에 결과값 할당
     self.mine = guess_hash
-    # 조건 0을 4개로 변환하기
+    # 조건 0이 4개로 변환하기
     return guess_hash[:4] == "0000"
 
 bc = Blockchain() # 객체 생성 
