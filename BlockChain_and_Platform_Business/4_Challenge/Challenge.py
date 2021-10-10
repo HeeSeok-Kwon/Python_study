@@ -39,7 +39,7 @@ class Blockchain(object):
   def proof_of_work(self, prev_block):
     # 난스 값 0으로 할당
     # valid_proof 호출
-    # new_transactions 호출 
+    # new_transactions 호출 -- 채굴 보상 50코인
     # new_block 호출
     print() # 채굴 후에 출력창 구분하기 위해 추가한 코드
     
