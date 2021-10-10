@@ -40,7 +40,7 @@ def proof_of_work(prev_block):
     nonce = 0
     while valid_proof(prev_block, nonce) is False:
       nonce += 1
-
+    new_transactions('system','me', 50) # 채굴 보상
     new_block(nonce=nonce, current_transactions=current_transactions)
     print()
     # return nonce
