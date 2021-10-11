@@ -2,7 +2,6 @@ import hashlib
 import json
 from time import time
 
-i = 0
 chain = []
 current_transactions = []
 
@@ -17,7 +16,7 @@ def new_transactions(sender, recipient, amount):
 
 def new_block(nonce, current_transactions=None, previous_hash=None):
     block = {
-      'index': i + 1,
+      'index': len(chain)+1,
       'timestamp': time(),
       'transactions': current_transactions,
       'nonce': nonce,
