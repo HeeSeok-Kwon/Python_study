@@ -4,7 +4,6 @@
 - BlockChain_and_Platform_Business : "블록체인과 플랫폼 경영" 수업 자료 
 - Blockchain_Learning_with_Python : "파이썬으로 배우는 블록체인 구조와 이론" 실습
 - CodingTest : "이것이 취업을 위한 코딩테스트다" 실습
-- DSC : Developer Student Clubs 스터디
 - Data_Mining_For_Business_Analytics
 - Learn_Python_By_Yourself : "혼자 공부하는 파이썬" 실습
 - SIG : 부산대학교 python 기초 동아리
