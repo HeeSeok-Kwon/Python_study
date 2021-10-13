@@ -4,7 +4,7 @@ import hashlib
 import json
 from time import time
 
-class Blockchain(object):
+class Blockchain(object): 
   # 생성자
   def __init__(self):
     self.chain = []
