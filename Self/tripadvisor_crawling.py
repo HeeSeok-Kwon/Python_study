@@ -13,6 +13,8 @@ Review_date_list = []
 DOE_list = []
 Review_text_list = []
 
+header = {'User-Agent':''}
+
 for r in range(15):
     print("page {} crawling".format(r))
     url_main= "https://www.tripadvisor.com/Attraction_Review-g187497-d190166-Reviews-Basilica_of_the_Sagrada_Familia-Barcelona_Catalonia.html"
@@ -21,17 +23,34 @@ for r in range(15):
     else:
       page =r*10
       url = "https://www.tripadvisor.com/Attraction_Review-g187497-d190166-Reviews-or{}-Basilica_of_the_Sagrada_Familia-Barcelona_Catalonia.html".format(page)
+    
+    if r != 0 and r%3 == 0:
+        print("waiting...")
+        time.sleep(10)
+    try:
+        req = requests.get(url, headers=header)
+    except:
+        print("Request Error!")
+        break
 
-    req = requests.get(url, headers={'UserAgent':""})
     if req.status_code == 200:  
         print("{} page access successfully".format(r))
-        res = req.content
-        soup = BeautifulSoup(res,'html.parser') 
-        blog_items = soup.find('div', 'bPhtn')  
+        res = req.text
+        # soup = BeautifulSoup(res,'html.parser') 
+        soup = BeautifulSoup(res,'lxml') 
+        div = soup.find('div',attrs={'class':'eeqnt'})
+        section = div.find('section', attrs={'id':'tab-data-AppPresentation_PoiReviewsAndQAWeb'})
+        review_section = section.find('section', attrs={'id':'REVIEWS'})
+        blog_items = review_section.find('div', attrs={'class':'bPhtn'})  
+        # print(blog_items)
     else:
-        print("link erreor")
+        print("An Error ocurred!")
         break     
     
+    if blog_items == None:
+        print("NoneType Error!")
+        continue
+
     #ID 
     ID_items = blog_items.find_all('span',{'class':'WlYyy cPsXC dTqpp'})
     count = 0
@@ -71,7 +90,7 @@ for r in range(15):
         Review_text_list.append(Review_text)
 
 
-    time.sleep(np.random.rand()*20)
+    time.sleep(np.random.rand()*15)
 
 mydict = {'ID': ID_data_list,
           'Review_date': Review_date_list,
