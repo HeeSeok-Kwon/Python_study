@@ -45,7 +45,7 @@ def get_link(search_word, page_num):
             try:
                 page_url = "http://riss.or.kr"+page_link[j].attrs['href'] 
             except:
-                print("page link error!")
+                print("Index error!")
                 break
             # print(page_url)
             reference_data = get_reference(page_url)
