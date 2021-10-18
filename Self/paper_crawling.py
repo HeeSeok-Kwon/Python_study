@@ -42,7 +42,10 @@ def get_link(search_word, page_num):
 
         print("crawling start page {}".format(i))
         for j in range(10):
-            page_url = "http://riss.or.kr"+page_link[j].attrs['href'] 
+            try:
+                page_url = "http://riss.or.kr"+page_link[j].attrs['href'] 
+            except:
+                break
             # print(page_url)
             reference_data = get_reference(page_url)
 
