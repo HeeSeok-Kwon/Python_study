@@ -6,7 +6,7 @@
 - CodingTest : "이것이 취업을 위한 코딩테스트다" 실습
 - Data_Mining_For_Business_Analytics
 - Learn_Python_By_Yourself : "혼자 공부하는 파이썬" 실습
-- SIG : 부산대학교 python 기초 동아리
+- SIG : 부산대학교 python 기초 동아리 
 - Self : python 기타 프로젝트 
 - Time_Saving_Python : "시간순삭 파이썬" 실습
 - [NomadCoder]Python_Web_Scrapper : Python web scrapper 무료 강의 실습
