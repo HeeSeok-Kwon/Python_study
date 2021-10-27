@@ -5,6 +5,7 @@
 - Blockchain_Learning_with_Python : "파이썬으로 배우는 블록체인 구조와 이론" 실습
 - CodingTest : "이것이 취업을 위한 코딩테스트다" 실습
 - Data_Mining_For_Business_Analytics
+- Deep_Learning_basic : 유튜브 "이수안컴퓨터연구소 - 딥러닝 기초" 실습 
 - Learn_Python_By_Yourself : "혼자 공부하는 파이썬" 실습
 - SIG : 부산대학교 python 기초 동아리 
 - Self : python 기타 프로젝트 
