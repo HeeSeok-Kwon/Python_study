@@ -1,4 +1,6 @@
 # 이때까지 배웠던 것을 활용해서 Blockchain class 만들기
+# 학번 :
+# 이름 : 
 
 import hashlib
 import json
@@ -8,14 +10,17 @@ class Blockchain(object):
   # 생성자
   def __init__(self):
     # 체인
+    self.chain = []
     # 현재 트랜잭션
+    self.current_transactions = []
     # mine 변수 선언하여 None 할당 (proof_of_work 결과값 담을 변수) 
+    self.mine = None
     # 최초의 블록
-    pass
+    self.new_block(nonce=100, previous_hash=1) # gensis block
   
   # 블록 추가
   def new_block(self, nonce, previous_hash=None):
-    # 블록 구조 + current_hash 원소 추가
+    # 블록 구조 + validation_vlaue 원소 추가
     # 현재 트랜잭션 비우기
     # mine 변수 ""로 초기화
     # 체인에 블록 연결하기
@@ -38,16 +43,17 @@ class Blockchain(object):
   # 채굴
   def proof_of_work(self, prev_block):
     # 난스 값 0으로 할당
+    # prev_block_hash에 prev_block을 hash 함수 취한 값을 할당
     # valid_proof 호출
     # new_transactions 호출 -- 채굴 보상 50코인
     # new_block 호출
     print() # 채굴 후에 출력창 구분하기 위해 추가한 코드
     
 
-  def valid_proof(self, prev_block, nonce):
+  def valid_proof(self, prev_block_hash, current_transactions, nonce):
     # print() 할 때, 커서 맨 앞으로 위치시켜 출력하기
     # mine에 결과값 할당
-    # 조건 0이 4개로 변환하기
+    # 조건 0을 4개로 변환하기
     pass
 
 
