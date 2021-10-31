@@ -14,7 +14,7 @@ class Blockchain(object):
     # 현재 트랜잭션
     self.current_transactions = []
     # mine 변수 선언하여 None 할당 (proof_of_work 결과값 담을 변수) 
-    self.mine = None
+    
     # 최초의 블록
     self.new_block(nonce=100, previous_hash=1) # gensis block
   
