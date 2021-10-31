@@ -69,6 +69,3 @@ bc.new_transactions('jenny','sujan', 100) # jenny가 sujan에게 100코인 전�
 # proof_of_work 호출
 
 # 현재 체인 상태를 출력하기
-
-
-  
