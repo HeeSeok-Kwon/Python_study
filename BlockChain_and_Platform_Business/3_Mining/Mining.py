@@ -1,6 +1,7 @@
 import hashlib
 import json
 from time import time
+# import random
 
 chain = []
 current_transactions = []
@@ -37,16 +38,22 @@ def last_block(chain):
 
 def proof_of_work(prev_block):
     nonce = 0
-    while valid_proof(prev_block, nonce) is False:
+    # nonce = random.randint(1, 999999999)
+    # count = 0
+    prev_block_hash = hash(prev_block)
+    while valid_proof(prev_block_hash, current_transactions, nonce) is False:
       nonce += 1
+      # nonce = random.randint(1, 999999999)
+      # count += 1
     new_transactions('system','me', 50) # 채굴 보상
     new_block(nonce=nonce, current_transactions=current_transactions)
+    # print("count : {}\nnonce : {}".format(count, nonce))
     print()
     # return nonce
 
-def valid_proof(prev_block, nonce):
+def valid_proof(prev_block_hash, current_transactions, nonce):
     # guess = str(prev_nonce*nonce).encode()
-    guess = (str(prev_block)+str(nonce)).encode()
+    guess = (str(prev_block_hash)+str(current_transactions)+str(nonce)).encode()
     guess_hash = hashlib.sha256(guess).hexdigest()
     print(guess_hash)
     return guess_hash[:3] == "000"
@@ -59,6 +66,6 @@ print(json.dumps(chain, indent=2))
 new_transactions('john1','smith1', 50)
 new_transactions('john2','smith2', 100)
 new_transactions('john3','smith3', 150)
-
+# print(last_block, "\n", current_transactions)
 proof_of_work(last_block(chain))
 print(json.dumps(chain, indent=2))
