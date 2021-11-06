@@ -26,7 +26,7 @@ class Blockchain(object):
       'timestamp': time(),
       'transactions': self.current_transactions,
       'nonce': nonce,
-      'previous_hash': previous_hash or self.hash(self.chain[len(self.chain)-1]),
+      'previous_hash': previous_hash or self.hash(self.chain[-1]), # self.hash(self.chain[len(self.chain)-1])
       'validation_value': self.mine
     }
     # 현재 트랜잭션 비우기
@@ -70,7 +70,9 @@ class Blockchain(object):
     print()
 
   def valid_proof(self, prev_block_hash, current_transactions, nonce):
+     # guess 변수에 prev_block_hash, current_transactions, nonce를 합친 문자열 encode 함수 취하기
     guess = (str(prev_block_hash)+str(current_transactions)+str(nonce)).encode()
+    # guess_hash 변수에 guess를 sha256 함수 취한 값을 할당하기
     guess_hash = hashlib.sha256(guess).hexdigest()
     # print() 할 때, 커서 맨 앞으로 위치시켜 출력하기
     print(guess_hash,end='\r')
@@ -80,6 +82,7 @@ class Blockchain(object):
     return guess_hash[:4] == "0000"
 
 bc = Blockchain() # 객체 생성 
+print(bc.last_block())
 bc.new_transactions('john','smith', 50) # john이 smith에게 50코인 전송
 bc.new_transactions('jenny','sujan', 100) # jenny가 sujan에게 100코인 전송
 # chappie가 simon에게 150코인 전송 코드 추가하기
