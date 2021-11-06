@@ -82,7 +82,7 @@ class Blockchain(object):
     return guess_hash[:4] == "0000"
 
 bc = Blockchain() # 객체 생성 
-print(bc.last_block())
+# print(bc.last_block()) # previous_hash 증명을 위한 코드
 bc.new_transactions('john','smith', 50) # john이 smith에게 50코인 전송
 bc.new_transactions('jenny','sujan', 100) # jenny가 sujan에게 100코인 전송
 # chappie가 simon에게 150코인 전송 코드 추가하기
