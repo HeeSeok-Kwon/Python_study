@@ -25,9 +25,13 @@ def new_block(nonce, current_transactions=None, previous_hash=None):
     }
 
     chain.append(block)
-    current_transactions = []
+    initialize_transactions()
 
     return block
+
+def initialize_transactions():
+  global current_transactions
+  current_transactions = []
 
 def hash(block):
     block_string = json.dumps(block, sort_keys=True).encode()
@@ -55,7 +59,7 @@ def valid_proof(prev_block_hash, current_transactions, nonce):
     # guess = str(prev_nonce*nonce).encode()
     guess = (str(prev_block_hash)+str(current_transactions)+str(nonce)).encode()
     guess_hash = hashlib.sha256(guess).hexdigest()
-    print(guess_hash)
+    print(guess_hash, end="\r")
     return guess_hash[:3] == "000"
 
 
@@ -69,3 +73,8 @@ new_transactions('john3','smith3', 150)
 # print(last_block, "\n", current_transactions)
 proof_of_work(last_block(chain))
 print(json.dumps(chain, indent=2))
+
+print(current_transactions)
+
+print("################### 트랜잭션 초기화 확인 ###################")
+print(current_transactions)
