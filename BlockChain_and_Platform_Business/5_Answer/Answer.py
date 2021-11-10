@@ -95,3 +95,6 @@ print(json.dumps(bc.current_transactions, indent=2))
 bc.proof_of_work(bc.hash(bc.last_block()))
 # 현재 체인 상태를 출력하기
 print(json.dumps(bc.chain, indent=2))
+
+print("################### 트랜잭션 초기화 확인 ###################")
+print(bc.current_transactions)
