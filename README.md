@@ -8,6 +8,7 @@
 - Deep_Learning_basic : 유튜브 "이수안컴퓨터연구소 - 딥러닝 기초" 실습 
 - Deep_learning_from_the_bottom_up : "밑바닥부터 시작하는 딥러닝" 실습
 - Learn_Python_By_Yourself : "혼자 공부하는 파이썬" 실습
+- Python_For_Research_Projects : "연구 논문을 위한 R과 파이썬 머신러닝 어프로치" 실습
 - SIG : 부산대학교 python 기초 동아리
 - Self : python 기타 프로젝트
 - Time_Saving_Python : "시간순삭 파이썬" 실습
